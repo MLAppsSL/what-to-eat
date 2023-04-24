@@ -169,7 +169,7 @@
             "outputFile": "com.example.proyecto_empresa.app-merged_res-11:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "/Users/luiscanamerogalvez/Desktop/proyecto_empresa/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/Users/luiscanamerogalvez/Desktop/Proyecto_Final/what-to-eat/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -1038,7 +1038,7 @@
                     }
                 },
                 {
-                    "source": "/Users/luiscanamerogalvez/Desktop/proyecto_empresa/android/app/src/main/res/values/styles.xml",
+                    "source": "/Users/luiscanamerogalvez/Desktop/Proyecto_Final/what-to-eat/android/app/src/main/res/values/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

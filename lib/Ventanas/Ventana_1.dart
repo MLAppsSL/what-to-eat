@@ -10,7 +10,7 @@ class Ventana_1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: Menu_3(titulo: 'Hello Tanveer', subtitulo: 'Recipe creator', tananyo: 20, tananyo2: 18,),
+      appBar: Menu_3(titulo: 'Hello Tanveer', subtitulo: 'Recipe creator', tananyo: 20, tananyo2: 18, comprobar: false,),
     );
   }
 }

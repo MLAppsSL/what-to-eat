@@ -29,16 +29,14 @@ class Menu_2 extends State<Navigation> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.login_sharp), label: "")
+          BottomNavigationBarItem(icon: Icon(Icons.bookmark_rounded), label: "")
         ],
         currentIndex: seleccion,
         onTap: presionarItem,
       ),
       floatingActionButton: FloatingActionButton(
           onPressed: () {
-            setState(() {
-              seleccion = 2;
-            });
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Ventana_2()));
           },
           child: Icon(Icons.add, color: Colors.white),
           backgroundColor: Color.fromARGB(255, 255, 127, 36),

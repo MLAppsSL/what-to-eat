@@ -1,4 +1,4 @@
-#Sun Apr 23 15:09:46 PDT 2023
+#Sun Apr 23 19:15:00 PDT 2023
 base.0=/Users/luiscanamerogalvez/Desktop/Proyecto_Final/what-to-eat/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

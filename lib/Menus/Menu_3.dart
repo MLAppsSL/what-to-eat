@@ -16,31 +16,58 @@ class Menu_3 extends StatelessWidget with PreferredSizeWidget {
       required this.titulo,
       required this.subtitulo,
       required this.tananyo,
-      required this.tananyo2, required this.comprobar});
+      required this.tananyo2,
+      required this.comprobar});
 
   Widget build(BuildContext context) {
+    double size = this.comprobar ? 215 : 315;
+    List<Widget> inputROw = comprobar
+        ? [
+            Row(children: [
+              Container(
+                width: 200,
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: '  Ingrediants',
+                  ),
+                ),
+              ),
+            ]),
+          ]
+        : [
+            IconButton(onPressed: () {}, icon: Icon(Icons.search)),
+            Container(
+              width: 200,
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: ' Search Recipe',
+                ),
+              ),
+            ),
+          ];
     return AppBar(
       automaticallyImplyLeading: false,
       title: Row(
         children: [
-          Image.asset('assets/logo.png'),
+          if (comprobar) Image.asset('assets/logo.png'),
           Padding(
             padding: EdgeInsets.only(left: 5),
             child: Column(
               children: [
-                Padding(padding: EdgeInsets.only(left: 10)),
-                Text(this.titulo,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontFamily: 'Poppins',
-                        fontSize: this.tananyo,
-                        fontWeight: FontWeight.w700)),
-                Text(this.subtitulo,
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontFamily: 'Poppins',
-                        fontSize: this.tananyo2,
-                        fontWeight: FontWeight.w300)),
+                if (comprobar)
+                  Text(this.titulo,
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontFamily: 'Poppins',
+                          fontSize: this.tananyo,
+                          fontWeight: FontWeight.w700)),
+                if (comprobar)
+                  Text(this.subtitulo,
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontFamily: 'Poppins',
+                          fontSize: this.tananyo2,
+                          fontWeight: FontWeight.w300)),
               ],
             ),
           ),
@@ -79,53 +106,85 @@ class Menu_3 extends StatelessWidget with PreferredSizeWidget {
             padding: EdgeInsets.only(bottom: 25),
             child: Column(
               children: [
-                Container(
-                  width: 315,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: Colors.white,
+                Row(children: [
+                  Padding(padding: EdgeInsets.only(left: 25)),
+                  Container(
+                    width: size,
+                    height: 50,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Colors.white,
+                    ),
+                    child: Row(
+                      children: inputROw,
+                    ),
                   ),
-                  child: Row(
-                    children: [
-                      if (comprobar == true)
-                        Text(
-                          'Ingrediants',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w300),
+                  Padding(padding: EdgeInsets.only(left: 15)),
+                  if (comprobar)
+                    Container(
+                      width: 60,
+                      height: 60,
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 255, 127, 36),
+                          borderRadius: BorderRadius.circular(20)),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.add,
+                          color: Colors.white,
+                          size: 35,
                         ),
-                      if(comprobar == false)
-                        IconButton(onPressed: () {}, icon: Icon(Icons.search)),
-                        Text(
-                          'Seach Recipe',
-                          style: TextStyle(
-                              fontFamily: 'Poppins',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w300),
-                        )
-                    ],
-                  ),
-                )
+                      ),
+                    )
+                ])
               ],
             ),
           )),
-      leadingWidth: 60,
+      leadingWidth: comprobar ? 75 : 300,
       leading: Row(
         children: [
-          Container(
-            width: 60,
-            height: 60,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(15),
-              color: Colors.white,
+          if (comprobar)
+            Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(15),
+                color: Colors.white,
+              ),
+              child: IconButton(
+                icon: Icon(Icons.arrow_back),
+                onPressed: () => Navigator.pop(context),
+              ),
             ),
-            child: IconButton(
-              icon: Icon(Icons.arrow_back),
-              onPressed: () => Navigator.pop(context),
-            ),
-          ),
+          if (comprobar == false)
+            Container(
+              child: Row(
+                children: [
+                  Padding(padding: EdgeInsets.only(left: 25)),
+                  Image.asset('assets/logo.png'),
+                  Padding(
+                    padding: EdgeInsets.only(left: 15),
+                    child: Column(
+                      children: [
+                        Padding(padding: EdgeInsets.only(top: 25)),
+                        Text(this.titulo,
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontFamily: 'Poppins',
+                                fontSize: this.tananyo,
+                                fontWeight: FontWeight.w700)),
+                        Text(this.subtitulo,
+                            style: TextStyle(
+                                color: Colors.grey,
+                                fontFamily: 'Poppins',
+                                fontSize: this.tananyo2,
+                                fontWeight: FontWeight.w300)),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            )
         ],
       ),
       backgroundColor: Color.fromARGB(255, 255, 241, 231),

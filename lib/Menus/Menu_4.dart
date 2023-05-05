@@ -15,7 +15,6 @@ class Menu_4 extends StatelessWidget with PreferredSizeWidget{
     return AppBar(
       automaticallyImplyLeading: false,
         title: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset('assets/logo.png'),
             Padding(
@@ -40,9 +39,10 @@ class Menu_4 extends StatelessWidget with PreferredSizeWidget{
                 ))
           ],
         ),
-        leadingWidth: 60,
+        leadingWidth: 75,
         leading: Row(
           children:[
+            Padding(padding: EdgeInsets.only(left:15)),
             Container(
               width: 60,
               height: 60,
